@@ -32,10 +32,10 @@ import javax.imageio.ImageIO;
 public class Main extends JFrame {
     public static void main(String[] args) {
         // Nome da Imagem
-        String aFile = "image2.jpg";
+        String aFile = "DWMTM.png";
 
         // Tipo de Interpolador a ser usuado
-        String tipo_filtro = "Uniforme"; // DWMTM, Uniforme, Gauss, PassaBaixa
+        String tipo_filtro = "Oeste"; // DWMTM, Uniforme, Gauss, PassaBaixa, Norte, Sul, Leste, Oeste
 
         // Filtro DWMTM
         // int nc1 = 0, nc2 = 0;
@@ -91,12 +91,12 @@ public class Main extends JFrame {
         setSize(w, h / 2);
 
         try {
-          ImageIO.write(dest, "png", new File(tipo_filtro + ".png"));
+            ImageIO.write(dest, "png", new File(tipo_filtro + ".png"));
         } catch (IOException e) {
             System.out.println("Problema ao gravar o arquivo");
             System.exit(0);
         }
-        
+
 
     }
 
@@ -131,10 +131,18 @@ public class Main extends JFrame {
                 }
                 break;
             case "PassaBaixa":
-                if (nc1 <= 0 && nc1 > 4) {         
+                if (nc1 <= 0 && nc1 > 4) {
                     System.out.println("Valores validos de 'nc1' >= 1 && <= 4" + nc1);
                     System.exit(0);
                 }
+                break;
+            case "Norte":
+                break;
+            case "Sul":
+                break;
+            case "Leste":
+                break;
+            case "Oeste":
                 break;
             default:
                 System.out.println("Tipo invalido, use:");
@@ -154,7 +162,15 @@ public class Main extends JFrame {
             case "Gauss":
                 return RuidoGauss(src, nc1, nc2);
             case "PassaBaixa":
-              return FiltroPassaBaixa(src, nc1);
+                return FiltroPassaBaixa(src, nc1);
+            case "Norte":
+                return Direcional(src, tipo_filtro);
+            case "Sul":
+                return Direcional(src, tipo_filtro);
+            case "Leste":
+                return Direcional(src, tipo_filtro);
+            case "Oeste":
+                return Direcional(src, tipo_filtro);
             default:
                 JOptionPane.showMessageDialog(null, "Digite números entre 1 e 4");
                 System.exit(0);
@@ -286,60 +302,109 @@ public class Main extends JFrame {
         return outImage;
     }
 
-    public BufferedImage FiltroPassaBaixa(BufferedImage src, int nc1){
+    public BufferedImage FiltroPassaBaixa(BufferedImage src, int nc1) {
         float matrizMedia[] = new float[9];
-               
+
         switch (nc1) {
-            case 1: matrizMedia[0] = 1/10f;
-            matrizMedia[1] = 1/10f;
-            matrizMedia[2] = 1/10f;
-            matrizMedia[3] = 1/10f;
-            matrizMedia[4] = 2/10f;
-            matrizMedia[5] = 1/10f;
-            matrizMedia[6] = 1/10f;
-            matrizMedia[7] = 1/10f;
-            matrizMedia[8] = 1/10f;
-            break;
-            case 2: matrizMedia[0] = 1/12f;
-            matrizMedia[1] = 1/12f;
-            matrizMedia[2] = 1/12f;
-            matrizMedia[3] = 1/12f;
-            matrizMedia[4] = 4/12f;
-            matrizMedia[5] = 1/12f;
-            matrizMedia[6] = 1/12f;
-            matrizMedia[7] = 1/12f;
-            matrizMedia[8] = 1/12f;
-            break;
-            case 3: matrizMedia[0] = 1/20f;
-            matrizMedia[1] = 1/20f;
-            matrizMedia[2] = 1/20f;
-            matrizMedia[3] = 1/20f;
-            matrizMedia[4] = 12/20f;
-            matrizMedia[5] = 1/20f;
-            matrizMedia[6] = 1/20f;
-            matrizMedia[7] = 1/20f;
-            matrizMedia[8] = 1/20f;
-            break;
-            case 4: matrizMedia[0] = 1/9f;
-            matrizMedia[1] = 1/9f;
-            matrizMedia[2] = 1/9f;
-            matrizMedia[3] = 1/9f;
-            matrizMedia[4] = 1/9f;
-            matrizMedia[5] = 1/9f;
-            matrizMedia[6] = 1/9f;
-            matrizMedia[7] = 1/9f;
-            matrizMedia[8] = 1/9f;
-            break;
+            case 1:
+                matrizMedia[0] = 1/10f;
+                matrizMedia[1] = 1/10f;
+                matrizMedia[2] = 1/10f;
+                matrizMedia[3] = 1/10f;
+                matrizMedia[4] = 2/10f;
+                matrizMedia[5] = 1/10f;
+                matrizMedia[6] = 1/10f;
+                matrizMedia[7] = 1/10f;
+                matrizMedia[8] = 1/10f;
+                break;
+            case 2:
+                matrizMedia[0] = 1/12f;
+                matrizMedia[1] = 1/12f;
+                matrizMedia[2] = 1/12f;
+                matrizMedia[3] = 1/12f;
+                matrizMedia[4] = 4/12f;
+                matrizMedia[5] = 1/12f;
+                matrizMedia[6] = 1/12f;
+                matrizMedia[7] = 1/12f;
+                matrizMedia[8] = 1/12f;
+                break;
+            case 3:
+                matrizMedia[0] = 1/20f;
+                matrizMedia[1] = 1/20f;
+                matrizMedia[2] = 1/20f;
+                matrizMedia[3] = 1/20f;
+                matrizMedia[4] = 12/20f;
+                matrizMedia[5] = 1/20f;
+                matrizMedia[6] = 1/20f;
+                matrizMedia[7] = 1/20f;
+                matrizMedia[8] = 1/20f;
+                break;
+            case 4:
+                matrizMedia[0] = 1/9f;
+                matrizMedia[1] = 1/9f;
+                matrizMedia[2] = 1/9f;
+                matrizMedia[3] = 1/9f;
+                matrizMedia[4] = 1/9f;
+                matrizMedia[5] = 1/9f;
+                matrizMedia[6] = 1/9f;
+                matrizMedia[7] = 1/9f;
+                matrizMedia[8] = 1/9f;
+                break;
         }
-        
+
         Kernel filtroMedia = new Kernel(3, 3, matrizMedia);
-        
+
         Raster srcR = src.getRaster();
         ConvolveOp blur = new ConvolveOp(filtroMedia);
         WritableRaster WR = blur.filter(srcR, null);
-        
+
         BufferedImage outImage = new BufferedImage(src.getColorModel(), WR, false, null);
-        
-        return outImage;    
+
+        return outImage;
+    }
+
+
+    public BufferedImage Direcional(BufferedImage src, String direcao) {
+        float[] matriz = new float[9];
+
+        switch (direcao) {
+            case "Norte":
+                matriz = new float[] {
+                    1f, 1f, 1f,
+                    1f, -2f, 1f, -1f, -1f, -1f
+                };
+                break;
+            case "Sul":
+                matriz = new float[] {
+                    -1f, -1f, -1f,
+                    1f, -2f, 1f,
+                    1f, 1f, 1f
+                };
+                break;
+            case "Leste":
+                matriz = new float[] {
+                    -1f, 1f, 1f, -1f, -2f, 1f, -1f, 1f, 1f
+                };
+                break;
+            case "Oeste":
+                matriz = new float[] {
+                    1f, 1f, -1f,
+                    1f, -2f, -1f,
+                    1f, 1f, -1f
+                };
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Tente Direcao: Norte, Sul, Leste, Oeste");
+                System.exit(0);
+                return null;
+        }
+
+        Raster srcR = src.getRaster();
+        Kernel filtroDirecao = new Kernel(3, 3, matriz);
+        ConvolveOp direcaoConv = new ConvolveOp(filtroDirecao);
+        WritableRaster WR = direcaoConv.filter(srcR, null);
+        BufferedImage outImage = new BufferedImage(src.getColorModel(), WR, false, null);
+
+        return outImage;
     }
 }
