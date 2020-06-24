@@ -32,7 +32,7 @@ import javax.imageio.ImageIO;
 public class Main extends JFrame {
     public static void main(String[] args) {
         // Nome da Imagem
-        String aFile = "DWMTM.png";
+        String aFile = "./images/DWMTM.png";
 
         // Tipo de Interpolador a ser usuado
         String tipo_filtro = "Oeste"; // DWMTM, Uniforme, Gauss, PassaBaixa, Norte, Sul, Leste, Oeste
@@ -91,7 +91,7 @@ public class Main extends JFrame {
         setSize(w, h / 2);
 
         try {
-            ImageIO.write(dest, "png", new File(tipo_filtro + ".png"));
+            ImageIO.write(dest, "png", new File("./images" + tipo_filtro + ".png"));
         } catch (IOException e) {
             System.out.println("Problema ao gravar o arquivo");
             System.exit(0);

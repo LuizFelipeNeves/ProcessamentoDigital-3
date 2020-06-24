@@ -18,7 +18,7 @@
 
 | Antes  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./image2.jpg" height="40%"/> |  <img src="./Gauss.png" height="40%"/> |
+|  <img src="./images/image2.jpg" height="40%"/> |  <img src="./images/Gauss.png" height="40%"/> |
 
 ------------------------------------
 
@@ -26,7 +26,7 @@
 
 | Antes  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./image2.jpg" height="40%"/> |  <img src="./Uniforme.png" height="40%"/> |
+|  <img src="./images/image2.jpg" height="40%"/> |  <img src="./images/Uniforme.png" height="40%"/> |
 
 ------------------------------------
 
@@ -34,7 +34,7 @@
 
 | Antes  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./image2.jpg" height="40%"/> |  <img src="./DWMTM.png" height="40%"/> |
+|  <img src="./images/image2.jpg" height="40%"/> |  <img src="./images/DWMTM.png" height="40%"/> |
 
 ------------------------------------
 
@@ -42,7 +42,7 @@
 
 | Antes (DWMTM)  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./DWMTM.png" height="40%"/> |  <img src="./PassaBaixa.png" height="40%"/> |
+|  <img src="./images/DWMTM.png" height="40%"/> |  <img src="./images/PassaBaixa.png" height="40%"/> |
 
 ------------------------------------
 
@@ -50,27 +50,27 @@
 ### Filtro Direcional Norte
 | Antes (DWMTM)  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./DWMTM.png" height="40%"/> |  <img src="./Norte.png" height="40%"/> |
+|  <img src="./images/DWMTM.png" height="40%"/> |  <img src="./images/Norte.png" height="40%"/> |
 
 ------------------------------------
 ### Filtro Direcional Sul
 | Antes (DWMTM)  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./DWMTM.png" height="40%"/> |  <img src="./Sul.png" height="40%"/> |
+|  <img src="./images/DWMTM.png" height="40%"/> |  <img src="./images/Sul.png" height="40%"/> |
 
 ------------------------------------
 
 ### Filtro Direcional Leste
 | Antes (DWMTM)  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./DWMTM.png" height="40%"/> |  <img src="./Leste.png" height="40%"/> |
+|  <img src="./images/DWMTM.png" height="40%"/> |  <img src="./images/Leste.png" height="40%"/> |
 
 ------------------------------------
 
 ### Filtro Direcional Oeste
 | Antes (DWMTM)  |  Depois  |
 | ------------------- | ------------------- |
-|  <img src="./DWMTM.png" height="40%"/> |  <img src="./Oeste.png" height="40%"/> |
+|  <img src="./images/DWMTM.png" height="40%"/> |  <img src="./images/Oeste.png" height="40%"/> |
 
 ------------------------------------
 
