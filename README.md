@@ -8,6 +8,12 @@
 - UNISAL - LORENA - 2020
 
 -------------------------------
+
+### RESULTADOS:
+
+`Conforme a imagem, é recomendado determinado tipo de filtro, para esta imagem o filtro Ruído uniforme preservou detalhes da imagem, sem apresentar efeito de blur/desfoque em comparação com os outros: DWMTM e Passa baixa.`
+
+
 ### Ruído de Gauss
 
 | Antes  |  Depois  |
@@ -67,5 +73,6 @@
 |  <img src="./DWMTM.png" height="40%"/> |  <img src="./Oeste.png" height="40%"/> |
 
 ------------------------------------
+
 
 
