@@ -91,7 +91,7 @@ public class Main extends JFrame {
         setSize(w, h / 2);
 
         try {
-            ImageIO.write(dest, "png", new File("./images" + tipo_filtro + ".png"));
+            ImageIO.write(dest, "png", new File("./images/" + tipo_filtro + ".png"));
         } catch (IOException e) {
             System.out.println("Problema ao gravar o arquivo");
             System.exit(0);
